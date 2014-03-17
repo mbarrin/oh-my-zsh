@@ -26,7 +26,7 @@ if [[ "$MODE_INDICATOR" == "" ]]; then
 fi
 
 function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
+  echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/insert}"
 }
 
 # define right prompt, if it wasn't defined by a theme
