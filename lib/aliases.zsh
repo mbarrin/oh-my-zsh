@@ -6,11 +6,6 @@ alias po='popd'
 alias ...='cd ../..'
 alias -- -='cd -'
 
-# Super user
-alias _='sudo'
-
-#alias g='grep -in'
-
 # Show history
 alias history='fc -l 1'
 
