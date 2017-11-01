@@ -1,16 +1,5 @@
-_homebrew-installed() {
-  type brew &> /dev/null
-}
-
-_rbenv-from-homebrew-installed() {
-  brew --prefix rbenv &> /dev/null
-}
-
 FOUND_RBENV=0
 rbenvdirs=("$HOME/.rbenv" "/usr/local/rbenv" "/opt/rbenv")
-if _homebrew-installed && _rbenv-from-homebrew-installed ; then
-    rbenvdirs=($(brew --prefix rbenv) "${rbenvdirs[@]}")
-fi
 
 for rbenvdir in "${rbenvdirs[@]}" ; do
   if [ -d $rbenvdir/bin -a $FOUND_RBENV -eq 0 ] ; then
@@ -49,9 +38,3 @@ for rbenvdir in "${rbenvdirs[@]}" ; do
   fi
 done
 unset rbenvdir
-
-if [ $FOUND_RBENV -eq 0 ] ; then
-  alias rubies='ruby -v'
-  function gemsets() { echo 'not supported' }
-  function rbenv_prompt_info() { echo "system: $(ruby -v | cut -f-2 -d ' ')" }
-fi

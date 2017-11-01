@@ -14,3 +14,5 @@ alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
 alias la='ls -lA'
+
+alias git=hub
